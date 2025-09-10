@@ -41,37 +41,113 @@
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*</br>**</br>***</br>****</br>*****</p>
+<%-- Double boucle pour former un triangle rectangle aligné à gauche --%>
+<% for (int i = 1; i <= cpt; i++) { %>
+        <p>
+        <% for (int j = 1; j <= i; j++) { %>
+            <%= "*" %>
+        <% } %>
+        </p>
+    <% } %>
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>****</br>***</br>**</br>*</p>
+<%-- Double boucle pour produire un triangle rectangle aligné à gauche --%>
+    <% for (int i = 1; i <= cpt; i++) { %>
+        <p>
+        <% for (int j = 1; j <= i; j++) { %>
+            <%= "*" %>
+        <% } %>
+        </p>
+    <% } %>
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
+<%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
+    <% for (int i = 1; i <= cpt; i++) { %>
+        <pre>
+        <%-- Espaces avant les étoiles --%>
+        <% for (int j = 1; j <= cpt - i; j++) { %>
+            <%= " " %>
+        <% } %>
+
+        <%-- Étoiles --%>
+        <% for (int k = 1; k <= i; k++) { %>
+            <%= "*" %>
+        <% } %>
+        </pre>
+    <% } %>
 
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;***</br>&nbsp;****</br>*****</p>
+<%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
+    <% for (int i = 1; i <= cpt; i++) { %>
+        <pre>
+        <%-- Boucle pour les espaces --%>
+        <% for (int j = 1; j <= cpt - i; j++) { %>
+            <%= " " %>
+        <% } %>
+
+        <%-- Boucle pour les étoiles --%>
+        <% for (int k = 1; k <= i; k++) { %>
+            <%= "*" %>
+        <% } %>
+        </pre>
+    <% } %>
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeur != null && !valeur.isEmpty()) { %>
+    <% int n = Integer.parseInt(valeur); %>
+
+    <%-- Partie haute du losange --%>
+    <% for (int i = 1; i <= n; i++) { %>
+        <pre>
+        <%-- Espaces avant les étoiles --%>
+        <% for (int j = 1; j <= n - i; j++) { %>
+            <%= " " %>
+        <% } %>
+        <%-- Étoiles --%>
+        <% for (int k = 1; k <= 2 * i - 1; k++) { %>
+            <%= "*" %>
+        <% } %>
+        </pre>
+    <% } %>
+
+    <%-- Partie basse du losange --%>
+    <% for (int i = n - 1; i >= 1; i--) { %>
+        <pre>
+        <%-- Espaces avant les étoiles --%>
+        <% for (int j = 1; j <= n - i; j++) { %>
+            <%= " " %>
+        <% } %>
+        <%-- Étoiles --%>
+        <% for (int k = 1; k <= 2 * i - 1; k++) { %>
+            <%= "*" %>
+        <% } %>
+        </pre>
+    <% } %>
+<% } %>
+
 
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>5 x 1 = 5</p>
-<p>5 x 2 = 10</p>
-<p>5 x 3 = 15</p>
-<p>5 x 4 = 20</p>
-<p>5 x 5 = 25</p>
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeur != null && !valeur.isEmpty()) { %>
+    <% int n = Integer.parseInt(valeur); %>
+
+    <%-- Boucle pour générer la table de multiplication --%>
+    <% for (int i = 1; i <= n; i++) { %>
+        <p><%= n %> x <%= i %> = <%= (n * i) %></p>
+    <% } %>
+<% } %>
+
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
