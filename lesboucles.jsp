@@ -22,7 +22,6 @@
     <p>
     <% for (int i = 1; i <= cpt; i++) { %>
        <%= "*" %>
-    <% } %>
     </p>
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
