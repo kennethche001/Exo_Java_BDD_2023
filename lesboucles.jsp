@@ -29,13 +29,6 @@
 <p>Ecrire le code afin de produire un carré d'étoile</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 
-<%-- Récupération de la valeur saisie pas l'utilisateur --%>
-<% String valeur = request.getParameter("valeur"); %>
-
-<%-- Vérification de l'existence de la valeur --%>
-<% if (valeur !=null && !valeur.isEmpty()) { %>
-    <% int cpt = Integer.parseInt(valeur); %>
-
     <%-- Double boucle pour former un carré d'étoiles --%>
     <% for (int i = 1; i <= cpt; i++) { %>
         <p>
