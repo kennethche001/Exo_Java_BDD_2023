@@ -34,8 +34,7 @@
             <%= "*" %>
         <% } %>
         </p>
-
-
+    <% } %>
 
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
