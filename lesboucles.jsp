@@ -28,8 +28,7 @@
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-
-    <%-- Double boucle pour former un carré d'étoiles --%>
+<%-- Double boucle pour former un carré d'étoiles --%>
     <% for (int i = 1; i <= cpt; i++) { %>
         <p>
         <% for (int j = 1; j <= cpt; j++) { %>
