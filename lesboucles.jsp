@@ -54,7 +54,7 @@
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à gauche --%>
-<% for (int i = 1; i <= cpt; i--) { %>    
+<% for (int i = 1; i <= cpt; i++) { %>    
         <p>
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
