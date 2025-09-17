@@ -65,20 +65,20 @@
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
-    <% for (int i = 1; i <= cpt; i++) { %>
-        <P>
-        <%-- Espaces avant les étoiles --%>
-        <% for (int j = 1; j <= cpt - i; j++) { %>
-            <%= " " %>
-        <% } %>
-
-        <%-- Étoiles --%>
-        <% for (int k = 1; k <= i; k++) { %>
-            <%= "*" %>
+<%-- Boucle pour construire le triangle rectangle aligné à droite --%>
+<% for (int i = 1; i <= cpt; i++) { %>
+    <p>
+        <%-- Affichage des espaces pour aligner à droite --%>
+        <% for (int j = 1; j <= (cpt - i); j++) { %>
+            &nbsp;
         <% } %>
         
-    <% } %>
+        <%-- Affichage des étoiles --%>
+        <% for (int k = 1; k <= i; k++) { %>
+            *
+        <% } %>
+    </p>
+<% } %>
 
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
