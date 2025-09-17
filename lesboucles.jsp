@@ -30,11 +30,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour former un carré d'étoiles --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        
+        <P>
         <% for (int j = 1; j <= cpt; j++) { %>
             <%= "*" %>
         <% } %>
-        
+        </P>
     <% } %>
 
 
@@ -43,11 +43,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour former un triangle rectangle aligné à gauche --%>
 <% for (int i = 1; i <= cpt; i++) { %>
-        
+        <P>
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
         <% } %>
-        
+        </P>
     <% } %>
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
@@ -55,11 +55,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à gauche --%>
 <% for (int i = 1; i <= cpt; i--) { %>    
-        
+        <P>
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
         <% } %>
-        
+        </P>
     <% } %>
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
@@ -67,7 +67,7 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        
+        <P>
         <%-- Espaces avant les étoiles --%>
         <% for (int j = 1; j <= cpt - i; j++) { %>
             <%= " " %>
