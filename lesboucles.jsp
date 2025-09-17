@@ -53,15 +53,15 @@
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<%-- Double boucle pour produire un triangle rectangle aligné à gauche --%>
-<% for (int i = 1; i <= cpt; i--) { %>    
-        <P>
+<%-- Boucle pour construire le triangle rectangle inversé aligné à gauche --%>
+<% for (int i = cpt; i >= 1; i--) { %>
+    <p>
+        <%-- Affichage des étoiles --%>
         <% for (int j = 1; j <= i; j++) { %>
-            <%= "*" %>
+            *
         <% } %>
-        </P>
-    <% } %>
-
+    </p>
+<% } %>
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
