@@ -83,55 +83,41 @@
 <h2>Exercice 5 : Triangle isocele</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
+<%-- Double boucle pour produire un triangle isocele --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        
-        <%-- Boucle pour les espaces --%>
-        <% for (int j = 1; j <= cpt - i; j++) { %>
-            <%= " " %>
+    <p>
+        <%-- Affichage des espaces pour aligner à droite --%>
+        <% for (int j = 1; j <= (cpt - i); j++) { %>
+            &nbsp;
         <% } %>
-
-        <%-- Boucle pour les étoiles --%>
+        
+        <%-- Affichage des étoiles --%>
         <% for (int k = 1; k <= i; k++) { %>
-            <%= "*" %>
+            *
         <% } %>
-        
-    <% } %>
+    </p>
+<% } %>
 
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<%-- Vérification de l'existence de la valeur --%>
-<% if (valeur != null && !valeur.isEmpty()) { %>
-    <% int n = Integer.parseInt(valeur); %>
 
-    <%-- Partie haute du losange --%>
-    <% for (int i = 1; i <= n; i++) { %>
-        <pre>
-        <%-- Espaces avant les étoiles --%>
-        <% for (int j = 1; j <= n - i; j++) { %>
-            <%= " " %>
+<%-- Partie 1 : montée du demi-losange --%>
+<% for (int i = 1; i <= cpt; i++) { %>
+    <p>
+        <% for (int j = 1; j <= i; j++) { %>
+            *
         <% } %>
-        <%-- Étoiles --%>
-        <% for (int k = 1; k <= 2 * i - 1; k++) { %>
-            <%= "*" %>
-        <% } %>
-        </pre>
-    <% } %>
+    </p>
+<% } %>
 
-    <%-- Partie basse du losange --%>
-    <% for (int i = n - 1; i >= 1; i--) { %>
-        <pre>
-        <%-- Espaces avant les étoiles --%>
-        <% for (int j = 1; j <= n - i; j++) { %>
-            <%= " " %>
+<%-- Partie 2 : descente du demi-losange --%>
+<% for (int i = cpt - 1; i >= 1; i--) { %>
+    <p>
+        <% for (int j = 1; j <= i; j++) { %>
+            *
         <% } %>
-        <%-- Étoiles --%>
-        <% for (int k = 1; k <= 2 * i - 1; k++) { %>
-            <%= "*" %>
-        <% } %>
-        </pre>
-    <% } %>
+    </p>
 <% } %>
 
 
