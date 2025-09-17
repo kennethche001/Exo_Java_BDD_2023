@@ -30,11 +30,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour former un carré d'étoiles --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <p>
+        
         <% for (int j = 1; j <= cpt; j++) { %>
             <%= "*" %>
         <% } %>
-        </p>
+        
     <% } %>
 
 
@@ -43,11 +43,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour former un triangle rectangle aligné à gauche --%>
 <% for (int i = 1; i <= cpt; i++) { %>
-        <p>
+        
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
         <% } %>
-        </p>
+        
     <% } %>
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
@@ -55,11 +55,11 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à gauche --%>
 <% for (int i = 1; i <= cpt; i--) { %>    
-        <p>
+        
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
         <% } %>
-        </p>
+        
     <% } %>
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
@@ -67,7 +67,7 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <pre>
+        
         <%-- Espaces avant les étoiles --%>
         <% for (int j = 1; j <= cpt - i; j++) { %>
             <%= " " %>
@@ -77,7 +77,7 @@
         <% for (int k = 1; k <= i; k++) { %>
             <%= "*" %>
         <% } %>
-        </pre>
+        
     <% } %>
 
 <h2>Exercice 5 : Triangle isocele</h2>
@@ -85,7 +85,7 @@
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <%-- Double boucle pour produire un triangle rectangle aligné à droite --%>
     <% for (int i = 1; i <= cpt; i++) { %>
-        <pre>
+        
         <%-- Boucle pour les espaces --%>
         <% for (int j = 1; j <= cpt - i; j++) { %>
             <%= " " %>
@@ -95,7 +95,7 @@
         <% for (int k = 1; k <= i; k++) { %>
             <%= "*" %>
         <% } %>
-        </pre>
+        
     <% } %>
 
 <h2>Exercice 6 : Le demi losange</h2>
