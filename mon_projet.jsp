@@ -1,6 +1,5 @@
 <%@ page import="java.util.*, java.text.SimpleDateFormat" %>
 <%
-    // Classe Task définie dans le même fichier JSP
     class Task {
         private String title;
         private String description;
@@ -21,7 +20,6 @@
         public void setCompleted(boolean completed) { this.completed = completed; }
     }
 
-    // Récupération ou création de la liste des tâches en session
     ArrayList<Task> taskList = (ArrayList<Task>) session.getAttribute("taskList");
     if (taskList == null) {
         taskList = new ArrayList<>();
@@ -49,7 +47,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mini Gestionnaire de Tâches</title>
+    <title>Mini Gestionnaire de Taches</title>
     <style>
         body { font-family: Arial, sans-serif; }
         .completed { text-decoration: line-through; color: gray; }
@@ -65,7 +63,7 @@
         <input type="hidden" name="action" value="add">
         <label>Titre: <input type="text" name="title" required></label><br><br>
         <label>Description: <input type="text" name="description"></label><br><br>
-        <label>Date d’echeance: <input type="date" name="dueDate"></label><br><br>
+        <label>Date de fin: <input type="date" name="dueDate"></label><br><br>
         <input type="submit" value="Ajouter">
     </form>
 
@@ -74,7 +72,7 @@
         <tr>
             <th>Titre</th>
             <th>Description</th>
-            <th>Date d’echeance</th>
+            <th>Date de fin</th>
             <th>Statut</th>
             <th>Actions</th>
         </tr>
