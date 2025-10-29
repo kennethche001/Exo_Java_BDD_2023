@@ -56,10 +56,10 @@
     </style>
 </head>
 <body>
-    <h1>Mini gestionnaire d taches</h1>
+    <h1>Mini gestionnaire de taches</h1>
 
     <h2>Ajouter une tache</h2>
-    <form method="post" action="index.jsp">
+    <form method="post" action="mon_projet.jsp">
         <input type="hidden" name="action" value="add">
         <label>Titre: <input type="text" name="title" required></label><br><br>
         <label>Description: <input type="text" name="description"></label><br><br>
@@ -87,9 +87,9 @@
             <td><%= t.isCompleted() ? "Terminee" : "En cours" %></td>
             <td>
                 <% if (!t.isCompleted()) { %>
-                    <a href="index.jsp?action=complete&index=<%=i%>">Terminer</a> |
+                    <a href="mon_projet.jsp?action=complete&index=<%=i%>">Terminer</a> |
                 <% } %>
-                <a href="index.jsp?action=delete&index=<%=i%>">Supprimer</a>
+                <a href="mon_projet.jsp?action=delete&index=<%=i%>">Supprimer</a>
             </td>
         </tr>
         <% } %>
