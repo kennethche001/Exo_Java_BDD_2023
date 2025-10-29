@@ -80,11 +80,11 @@
             for (int i = 0; i < taskList.size(); i++) {
                 Task t = taskList.get(i);
         %>
-        <tr class="<%= t.isCompleted() ? "completed" : "" %>">
-            <td><%= t.getTitle() %></td>
-            <td><%= t.getDescription() %></td>
-            <td<%= t.getDueDate() != null ? t.getDueDate() : "" %></td>
-            <td><%= t.isCompleted() ? "Terminee" : "En cours" %></td>
+        <tr>
+            <td class="<%= t.isCompleted() ? "completed" : "" %>"><%= t.getTitle() %></td>
+            <td class="<%= t.isCompleted() ? "completed" : "" %>"><%= t.getDescription() %></td>
+            <td class="<%= t.isCompleted() ? "completed" : "" %>"><%= t.getDueDate() != null ? t.getDueDate() : "" %></td>
+            <td class="<%= t.isCompleted() ? "completed" : "" %>"><%= t.isCompleted() ? "Terminee" : "En cours" %></td>
             <td>
                 <% if (!t.isCompleted()) { %>
                     <a href="mon_projet.jsp?action=complete&index=<%=i%>">Terminer</a> |
