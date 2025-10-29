@@ -26,7 +26,6 @@
         session.setAttribute("taskList", taskList);
     }
 
-    // Gestion des actions : ajout, suppression, marquer terminé
     String action = request.getParameter("action");
     if ("add".equals(action)) {
         String title = request.getParameter("title");
