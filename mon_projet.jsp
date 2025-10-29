@@ -58,23 +58,23 @@
     </style>
 </head>
 <body>
-    <h1>Mini Gestionnaire de Tâches</h1>
+    <h1>Mini gestionnaire d taches</h1>
 
-    <h2>Ajouter une tâche</h2>
+    <h2>Ajouter une tache</h2>
     <form method="post" action="index.jsp">
         <input type="hidden" name="action" value="add">
         <label>Titre: <input type="text" name="title" required></label><br><br>
         <label>Description: <input type="text" name="description"></label><br><br>
-        <label>Date d’échéance: <input type="date" name="dueDate"></label><br><br>
+        <label>Date d’echeance: <input type="date" name="dueDate"></label><br><br>
         <input type="submit" value="Ajouter">
     </form>
 
-    <h2>Liste des tâches</h2>
+    <h2>Liste des taches</h2>
     <table>
         <tr>
             <th>Titre</th>
             <th>Description</th>
-            <th>Date d’échéance</th>
+            <th>Date d’echeance</th>
             <th>Statut</th>
             <th>Actions</th>
         </tr>
@@ -86,7 +86,7 @@
             <td><%= t.getTitle() %></td>
             <td><%= t.getDescription() %></td>
             <td><%= t.getDueDate() != null ? t.getDueDate() : "" %></td>
-            <td><%= t.isCompleted() ? "Terminée" : "En cours" %></td>
+            <td><%= t.isCompleted() ? "Terminee" : "En cours" %></td>
             <td>
                 <% if (!t.isCompleted()) { %>
                     <a href="index.jsp?action=complete&index=<%=i%>">Terminer</a> |
