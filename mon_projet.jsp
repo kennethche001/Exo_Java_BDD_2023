@@ -50,9 +50,7 @@
     <title>Mini Gestionnaire de Taches</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        .completed { 
-                text-decoration: line-through; 
-                color: gray; }
+        .completed { text-decoration: line-through; color: gray; }
         table { border-collapse: collapse; width: 70%; }
         th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
     </style>
