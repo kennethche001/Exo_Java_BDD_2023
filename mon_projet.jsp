@@ -1,1 +1,100 @@
+<%@ page import="java.util.*, java.text.SimpleDateFormat" %>
+<%
+    // Classe Task définie dans le même fichier JSP
+    class Task {
+        private String title;
+        private String description;
+        private String dueDate;
+        private boolean completed;
 
+        public Task(String title, String description, String dueDate) {
+            this.title = title;
+            this.description = description;
+            this.dueDate = dueDate;
+            this.completed = false;
+        }
+
+        public String getTitle() { return title; }
+        public String getDescription() { return description; }
+        public String getDueDate() { return dueDate; }
+        public boolean isCompleted() { return completed; }
+        public void setCompleted(boolean completed) { this.completed = completed; }
+    }
+
+    // Récupération ou création de la liste des tâches en session
+    ArrayList<Task> taskList = (ArrayList<Task>) session.getAttribute("taskList");
+    if (taskList == null) {
+        taskList = new ArrayList<>();
+        session.setAttribute("taskList", taskList);
+    }
+
+    // Gestion des actions : ajout, suppression, marquer terminé
+    String action = request.getParameter("action");
+    if ("add".equals(action)) {
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        String dueDate = request.getParameter("dueDate");
+        if (title != null && !title.isEmpty()) {
+            taskList.add(new Task(title, description, dueDate));
+        }
+    } else if ("delete".equals(action)) {
+        int index = Integer.parseInt(request.getParameter("index"));
+        taskList.remove(index);
+    } else if ("complete".equals(action)) {
+        int index = Integer.parseInt(request.getParameter("index"));
+        taskList.get(index).setCompleted(true);
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Gestionnaire de Tâches</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .completed { text-decoration: line-through; color: gray; }
+        table { border-collapse: collapse; width: 70%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Mini Gestionnaire de Tâches</h1>
+
+    <h2>Ajouter une tâche</h2>
+    <form method="post" action="index.jsp">
+        <input type="hidden" name="action" value="add">
+        <label>Titre: <input type="text" name="title" required></label><br><br>
+        <label>Description: <input type="text" name="description"></label><br><br>
+        <label>Date d’échéance: <input type="date" name="dueDate"></label><br><br>
+        <input type="submit" value="Ajouter">
+    </form>
+
+    <h2>Liste des tâches</h2>
+    <table>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date d’échéance</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+        <%
+            for (int i = 0; i < taskList.size(); i++) {
+                Task t = taskList.get(i);
+        %>
+        <tr class="<%= t.isCompleted() ? "completed" : "" %>">
+            <td><%= t.getTitle() %></td>
+            <td><%= t.getDescription() %></td>
+            <td><%= t.getDueDate() != null ? t.getDueDate() : "" %></td>
+            <td><%= t.isCompleted() ? "Terminée" : "En cours" %></td>
+            <td>
+                <% if (!t.isCompleted()) { %>
+                    <a href="index.jsp?action=complete&index=<%=i%>">Terminer</a> |
+                <% } %>
+                <a href="index.jsp?action=delete&index=<%=i%>">Supprimer</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+</html>
