@@ -59,11 +59,117 @@
     <meta charset="UTF-8">
     <title>Gestionnaire de Taches de Kenneth</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .completed { text-decoration: line-through; color: gray; }
-        table { border-collapse: collapse; width: 70%; }
-        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(120deg, #74ABE2, #5563DE);
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: #3949ab;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        color: #2e3b8b;
+        margin-left: 10%;
+    }
+
+    form {
+        background: white;
+        width: 70%;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input[type="text"], input[type="date"] {
+        width: 97%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        background-color: #3949ab;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #283593;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    th {
+        background-color: #3f51b5;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+
+    a {
+        text-decoration: none;
+        color: #3949ab;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #1a237e;
+        text-decoration: underline;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 15px;
+        color: white;
+        font-size: 14px;
+    }
     </style>
+
 </head>
 <body>
     <h1>Mini gestionnaire de taches</h1>
