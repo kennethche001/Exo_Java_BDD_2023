@@ -46,7 +46,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Mini Gestionnaire de Taches</title>
+    <title>Gestionnaire de Taches de Kenneth</title>
     <style>
         body { font-family: Arial, sans-serif; }
         .completed { text-decoration: line-through; color: gray; }
