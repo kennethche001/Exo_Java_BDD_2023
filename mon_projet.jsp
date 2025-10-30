@@ -34,13 +34,24 @@
         if (title != null && !title.isEmpty()) {
             taskList.add(new Task(title, description, dueDate));
         }
-    } else if ("delete".equals(action)) {
-        int index = Integer.parseInt(request.getParameter("index"));
+} else if ("delete".equals(action)) {
+    int index = Integer.parseInt(request.getParameter("index"));
+    if (index >= 0 && index < taskList.size()) {
         taskList.remove(index);
-    } else if ("complete".equals(action)) {
-        int index = Integer.parseInt(request.getParameter("index"));
+    }
+    // Redirection pour éviter la répétition de l'action après rafraîchissement
+    response.sendRedirect("mon_projet.jsp");
+    return;
+} else if ("complete".equals(action)) {
+    int index = Integer.parseInt(request.getParameter("index"));
+    if (index >= 0 && index < taskList.size()) {
         taskList.get(index).setCompleted(true);
     }
+    // Redirection ici aussi
+    response.sendRedirect("mon_projet.jsp");
+    return;
+}
+
 %>
 <!DOCTYPE html>
 <html>
